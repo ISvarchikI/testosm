@@ -5,12 +5,13 @@
         <input type="text" @input="searchTextChange" v-bind:value="searchText" class="searchInput" placeholder="Search title.."/>
         </div>
         <div class="inputContainer">
-            <input @change="todoTextChange"
+            <input @input="todoTextChange"
                    v-bind:value="todoText"
                    type="text"
                    class="todoInput"
-                   placeholder="Input here...">
-            <button @click="addTodoFromInput" class="addButton">Add</button>
+                   placeholder="Input here..."
+                    v-on:keyup.enter="addTodoFromInput">
+            <button @click="addTodoFromInput" class="addButton" :disabled="!todoText">Add</button>
         </div>
 
     </div>
@@ -35,6 +36,10 @@ export default {
             this.todoText = e.target.value;
         },
         addTodoFromInput() {
+            if (this.todoText === '') {
+                console.log(this.todoText)
+                return
+            }
             this.addTodo({
                 id: v1(),
                 title: this.todoText,
@@ -42,11 +47,13 @@ export default {
                 searched: true
             });
             this.todoText = '';
-        },
-        searchTextChange(e) {
-            this.searchText = e.target.value;
-            this.searchTodo(this.searchText);
-        },
+            this.searchText = '';
+            this.searchTodo('')
+    },
+    searchTextChange(e) {
+        this.searchText = e.target.value;
+        this.searchTodo(this.searchText);
+    },
     },
 }
 </script>
