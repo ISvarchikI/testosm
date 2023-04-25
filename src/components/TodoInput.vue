@@ -5,11 +5,11 @@
         </div>
         <div class="inputContainer">
             <input @input="todoTextChange"
-                   v-bind:value="todoText"
+                   :value="todoText"
                    type="text"
                    class="todoInput"
                    placeholder="Input here..."
-                   v-on:keyup.enter="addTodoFromInput">
+                   @keyup.enter="addTodoFromInput">
             <button @click="addTodoFromInput" class="addButton" :disabled="!todoText">Add</button>
         </div>
     </div>
