@@ -36,7 +36,6 @@ export default {
 
         addTodoFromInput() {
             if (this.todoText === '') {
-                console.log(this.todoText)
                 return
             }
             this.addTodo({
@@ -47,7 +46,7 @@ export default {
             });
             this.todoText = '';
             this.searchText = '';
-            this.searchTodo('')
+            this.searchTodo('');
         },
 
         searchTextChange(e) {

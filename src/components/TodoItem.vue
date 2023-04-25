@@ -1,5 +1,5 @@
 <template>
-    <div class="todoItem" v-show="todo.searched" @click.prevent="toggleTodo(todo.id)">
+    <div class="todoItem" v-if="todo.searched" @click.prevent="toggleTodo(todo.id)">
         <div v-if="todo.done"  class="crossed todoTitle" @click.prevent="toggleTodo(todo.id)">{{ todo.title }}</div>
         <div v-else class="todoTitle">{{ todo.title }}</div>
         <div class="buttonSection">

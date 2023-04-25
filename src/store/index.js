@@ -45,10 +45,10 @@ export default createStore({
       state.todos.push(todo);
     },
     delete_todo(state, id) {
-      state.todos = state.todos.filter(todo=> todo.id !== id)
+      state.todos = state.todos.filter(todo=> todo.id !== id);
     },
     toggle_todo(state, id) {
-      const checkedTodo = state.todos.find(todo => todo.id === id)
+      const checkedTodo = state.todos.find(todo => todo.id === id);
       checkedTodo.done = checkedTodo.done === false;
     },
     search_todo(state, search) {
