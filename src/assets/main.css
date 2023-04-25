@@ -3,6 +3,7 @@
 body {
     font-size: 15px;
 }
+
 .inputForm {
     display: flex;
     flex-direction: column;
@@ -106,10 +107,6 @@ body {
     margin-left: auto;
 }
 
-.buttonSection button {
-
-}
-
 .deleteButton {
     background-color: #f4511e;
     border: none;
@@ -129,6 +126,7 @@ body {
 
 .todoTitle {
     font-size: 20px;
+    line-height: 36px;
 }
 
 .crossed {

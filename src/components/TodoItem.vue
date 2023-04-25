@@ -6,7 +6,6 @@
             <button @click.stop="deleteTodo(todo.id)" class="deleteButton">Delete</button>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -20,7 +19,6 @@ export default {
         ...mapActions(['deleteTodo']),
         ...mapActions(['toggleTodo'])
     },
-
 }
 </script>
 

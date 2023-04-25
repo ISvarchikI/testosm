@@ -1,4 +1,4 @@
-import vuex, { createStore } from 'vuex'
+import { createStore } from 'vuex'
 
 export default createStore({
   state: {
@@ -53,10 +53,9 @@ export default createStore({
     },
     search_todo(state, search) {
       const filtered = state.todos.filter(todo => {
+        todo.searched = false;
         return todo.title.toLowerCase().includes(search.toLowerCase())
-
       })
-      state.todos.forEach(todo => todo.searched = false)
       filtered.forEach(todo => todo.searched = true);
     }
   },
